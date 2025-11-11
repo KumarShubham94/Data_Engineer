@@ -1,0 +1,69 @@
+{
+  "type": "record",
+  "name": "EmailEvent",
+  "namespace": "com.marketing.events",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string",
+      "doc": "Unique identifier for deduplication"
+    },
+    {
+      "name": "event_timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Event time used for watermarking"
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "doc": "Unique user identifier"
+    },
+    {
+      "name": "email",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Recipient email address"
+    },
+    {
+      "name": "campaign_id",
+      "type": "string",
+      "doc": "Marketing campaign identifier"
+    },
+    {
+      "name": "event_type",
+      "type": {
+        "type": "enum",
+        "name": "EmailEventType",
+        "symbols": ["SENT", "DELIVERED", "OPENED", "CLICKED", "BOUNCED", "UNSUBSCRIBED"]
+      },
+      "doc": "Type of email lifecycle event"
+    },
+    {
+      "name": "device_type",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Device used: mobile/desktop/tablet"
+    },
+    {
+      "name": "location",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Geo or region for audience segmentation"
+    },
+    {
+      "name": "spam_score",
+      "type": ["null", "float"],
+      "default": null,
+      "doc": "Indicator for email filtering analysis"
+    },
+    {
+      "name": "engagement_score",
+      "type": ["null", "float"],
+      "default": null,
+      "doc": "Behavior-based score for campaign analytics"
+    }
+  ]
+}
