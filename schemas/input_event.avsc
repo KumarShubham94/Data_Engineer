@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "EmailMarketingEvent",
+  "namespace": "com.kafka.streaming",
+  "fields": [
+    { "name": "event_id", "type": "string" },
+    { "name": "user_id", "type": "string" },
+    { "name": "campaign_id", "type": "string" },
+    { "name": "email_subject", "type": "string" },
+    { "name": "event_type", "type": "string" },
+    { "name": "timestamp", "type": "long" },
+    { "name": "device_type", "type": "string" },
+    { "name": "country", "type": "string" },
+    { "name": "engagement_score", "type": "float" },
+    { "name": "email_open_time", "type": "int" }
+  ]
+}

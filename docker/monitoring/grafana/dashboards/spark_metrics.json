@@ -1,0 +1,49 @@
+{
+    "dashboard": {
+      "title": "Spark + Gold Pipeline Metrics",
+      "panels": [
+        {
+          "type": "stat",
+          "title": "Active Spark Jobs",
+          "targets": [
+            { "expr": "spark_driver_active_jobs", "refId": "A" }
+          ],
+          "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 }
+        },
+        {
+          "type": "time_series",
+          "title": "Executor Memory Used",
+          "targets": [
+            { "expr": "spark_executor_memory_used_bytes", "refId": "B" }
+          ],
+          "gridPos": { "x": 12, "y": 0, "w": 12, "h": 6 }
+        },
+        {
+          "type": "stat",
+          "title": "Gold Pipeline Runs Total",
+          "targets": [
+            { "expr": "pipeline_runs_total", "refId": "C" }
+          ],
+          "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 }
+        },
+        {
+          "type": "stat",
+          "title": "Gold Pipeline Failures",
+          "targets": [
+            { "expr": "pipeline_failures_total", "refId": "D" }
+          ],
+          "gridPos": { "x": 12, "y": 6, "w": 12, "h": 6 }
+        },
+        {
+          "type": "time_series",
+          "title": "Gold Pipeline Duration (seconds)",
+          "targets": [
+            { "expr": "pipeline_duration_seconds_sum / pipeline_duration_seconds_count", "refId": "E" }
+          ],
+          "gridPos": { "x": 0, "y": 12, "w": 24, "h": 6 }
+        }
+      ]
+    },
+    "overwrite": true
+  }
+  
