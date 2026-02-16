@@ -1,0 +1,71 @@
+{
+  "expectations": [
+    {
+      "column": "event_id",
+      "expectation_type": "not_null"
+    },
+    {
+      "column": "event_id",
+      "expectation_type": "unique"
+    },
+    {
+      "column": "user_id",
+      "expectation_type": "not_null"
+    },
+    {
+      "column": "campaign_id",
+      "expectation_type": "not_null"
+    },
+    {
+      "column": "email_subject",
+      "expectation_type": "not_null"
+    },
+    {
+      "column": "event_type",
+      "expectation_type": "not_null",
+      "allowed_values": ["open", "click", "bounce", "unsubscribe"]
+    },
+    {
+      "column": "timestamp",
+      "expectation_type": "not_null",
+      "data_type": "bigint",
+      "min_value": 0
+    },
+    {
+      "column": "device_type",
+      "expectation_type": "not_null",
+      "allowed_values": ["desktop", "mobile", "tablet", "unknown"]
+    },
+    {
+      "column": "country",
+      "expectation_type": "not_null"
+    },
+    {
+      "column": "engagement_score",
+      "expectation_type": "not_null",
+      "data_type": "double",
+      "min_value": 0.0,
+      "max_value": 1.0
+    },
+    {
+      "column": "email_open_time",
+      "expectation_type": "not_null",
+      "data_type": "int",
+      "min_value": 0
+    },
+    {
+      "column": "kafka_ts",
+      "expectation_type": "not_null",
+      "data_type": "timestamp"
+    },
+    {
+      "column": "data_source",
+      "expectation_type": "not_null",
+      "allowed_values": ["kafka"]
+    }
+  ],
+  "deduplication": {
+    "primary_key": ["event_id"],
+    "keep": "latest"
+  }
+}
